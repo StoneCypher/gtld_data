@@ -7,7 +7,8 @@
 -export([
 
     as_string/0,
-    parsed/0
+    parsed/0,
+    ga_only/0
 
 ]).
 
@@ -15,7 +16,17 @@
 
 
 
-%% @doc Copy pasta string data from https://www.logicboxes.com/new-gtld-calendar .
+%% @doc Lists only generally available gTLDs; drops date info.
+
+ga_only() ->
+
+    [ Name || [ Name, "LIVE - GA", _, _, _, _, _ ] <- parsed() ].
+
+
+
+
+
+%% @doc Breaks data apart into list-of-lists .
 
 parsed() ->
 
