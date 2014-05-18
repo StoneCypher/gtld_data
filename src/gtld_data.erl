@@ -15,6 +15,8 @@
 
 
 
+%% @doc Copy pasta string data from https://www.logicboxes.com/new-gtld-calendar .
+
 parsed() ->
 
     [ sc:explode("\t", Line) || Line <- sc:explode("\r\n", as_string() ) ].
