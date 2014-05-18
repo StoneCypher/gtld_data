@@ -6,9 +6,18 @@
 
 -export([
 
-    as_string/0
+    as_string/0,
+    parsed/0
 
 ]).
+
+
+
+
+
+parsed() ->
+
+    [ sc:explode("\t", Line) || Line <- sc:explode("\r\n", as_string() ) ].
 
 
 
